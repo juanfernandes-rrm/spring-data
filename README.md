@@ -1,5 +1,22 @@
 ﻿# Spring Data
  
+ Neste curso, busco uma introdução ao ecossitema Spring, prestando muita atenção em conceitos importantes do funcionanmento do Spring. 
+ Além disso, me aprofundo nos estudos de persistência de dados com Java, dando continuidade aos estudos de JDBC e JPA.
+ 
+ ## Anotações
+Neste readme, procurei abordar os conceitos visto durante o curso, entretanto não me aprofundo tanto. No notion procuro me aprofundar mais no conceitos, utilizando código, esquemas, imagens, problemas que enfrentei e soluções para os mesmos, e mais conteúdo para complementar o estudo. Se você tem interesse nesses detalhes, pode acessar aqui[adcionar link]. 
+ 
+ ## Conceitos abordados no curso
+ 
+ - Uso do repositórios
+ - Geração de querys sem escrita de JPQL
+ - Paginação e Ordenação
+ - Querys dinâmicas através dos Specifications
+
+## Conceitos citados no curso
+- Anotações Spring
+- Injeção de dependências
+ 
  ## Ambiente
  
 - JDK8+
