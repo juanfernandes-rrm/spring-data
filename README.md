@@ -71,4 +71,11 @@ Além da consultas padrões oferecidas pelos métodos do CrudRepository, também
 
 A Derived Query é um recurso muito interessante. Desta forma, as queries são geradas através do nome do método, que segue um padrão para que o Spring data gere a query automaticamente.
 
+## Paginação
+É um forma de consulta que visa realizar consultas mais rápidas através da paginação dos dados. 
+No Spring data, isto é feito através dos Repositories que herdam de PagingAndSortingRepository. Com o repository Herdando dessa Classe, é possível passar um objeto ***Pageable*** para o método ***find()***. Desse modo, é feita a paginação da consulta.
+
+## Projeção
+A Projeção é utilizada quando é necessário criar queries personalizadas, que retornam apenas campos específicos dos registros. Uma Projeção é uma interface que define métodos ***get()*** para armazenar os atributos consultados. Também é possível utilizar classes ***DTOs*** para receber os dados das queries personalizadas.
+Não é possível criar queries personalizadas através do Derived Query, por isso é utilizado Native Query.
 
