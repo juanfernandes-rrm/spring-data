@@ -4,7 +4,7 @@
  Além disso, me aprofundo nos estudos de persistência de dados com Java, dando continuidade aos estudos de JDBC e JPA.
  
  ## Anotações
-Neste readme, procurei abordar os conceitos visto durante o curso, entretanto não me aprofundo tanto. No notion procuro me aprofundar mais no conceitos, utilizando código, esquemas, imagens, problemas que enfrentei e soluções para os mesmos, e mais conteúdo para complementar o estudo. Se você tem interesse nesses detalhes, pode acessar aqui[adcionar link]. 
+Neste readme, procurei abordar os conceitos visto durante o curso, entretanto não me aprofundo tanto. No notion procuro me aprofundar mais no conceitos, utilizando código, esquemas, imagens, problemas que enfrentei e soluções para os mesmos, e mais conteúdo para complementar o estudo. Se você tem interesse nesses detalhes, pode acessar [aqui](https://repeated-cobbler-d1a.notion.site/Spring-Data-JPA-Reposit-rios-consultas-proje-es-e-specifications-164384b0a9b74f07ba0ae562ffdaf10e). 
  
  ## Conceitos abordados no curso
  
@@ -26,7 +26,7 @@ Neste readme, procurei abordar os conceitos visto durante o curso, entretanto n�
 
 ## Criando aplicação
 
-Será utilizado o Spring Initializr ([https://start.spring.io/](https://start.spring.io/)) para criar a aplicação com a seguinte configuração:
+Será utilizado o [Spring Initializr](https://start.spring.io/) para criar a aplicação com a seguinte configuração:
 
 <img width="600" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc3c5cb30-367b-4c67-a27f-00bf98d6bdc5%2FUntitled.png?table=block&id=c4870454-ab7f-4d58-9578-2a8fa4528aa3&spaceId=c201bf83-8b0f-4f26-aff6-11cb5d30850e&width=2000&userId=4b9f37e7-280d-4f3d-bb98-bcfe01bcc215&cache=v2"/>
 
@@ -34,7 +34,7 @@ Após gerar a aplicação, basta importá-la em alguma IDE.
 
 ## Configurando o Banco de Dados
 
-Através do ***mvn repository (***[https://mvnrepository.com/](https://mvnrepository.com/)***)***, busque a dependência do driver do Banco de dados escolhido para o projeto, e adicione no arquivo ***pom.xml***. Neste caso, foi utilizado o driver do ***Mysql***.
+Através do [mvn repository](https://mvnrepository.com/), busque a dependência do driver do Banco de dados escolhido para o projeto, e adicione no arquivo ***pom.xml***. Neste caso, foi utilizado o driver do ***Mysql***.
 
 Com o driver do Banco de dados adicionado ao projeto, é necessário informar à aplicação as credenciais de acesso, isso é feito no arquivo application.properties.
 
@@ -79,3 +79,5 @@ No Spring data, isto é feito através dos Repositories que herdam de PagingAndS
 A Projeção é utilizada quando é necessário criar queries personalizadas, que retornam apenas campos específicos dos registros. Uma Projeção é uma interface que define métodos ***get()*** para armazenar os atributos consultados. Também é possível utilizar classes ***DTOs*** para receber os dados das queries personalizadas.
 Não é possível criar queries personalizadas através do Derived Query, por isso é utilizado Native Query.
 
+## Consultas Dinâmicas
+No Spring-data, Queries dinâmicas são feitas através de ***Specifications***. A Specification é uma camada que abstrai toda a complexidade da API criteria, facilitando o desenvolvimento de consultas dinâmicas.
