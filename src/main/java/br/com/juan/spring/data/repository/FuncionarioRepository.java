@@ -1,6 +1,8 @@
 package br.com.juan.spring.data.repository;
 
 import br.com.juan.spring.data.orm.Funcionario;
+import br.com.juan.spring.data.orm.FuncionarioProjecao;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
@@ -10,7 +12,8 @@ import java.util.List;
 
 
 @Repository
-public interface FuncionarioRepository extends PagingAndSortingRepository<Funcionario, Integer> {
+public interface FuncionarioRepository extends PagingAndSortingRepository<Funcionario, Integer>,
+        JpaSpecificationExecutor<Funcionario> {
     
     List<Funcionario> findByNome(String nome);
 
@@ -23,4 +26,7 @@ public interface FuncionarioRepository extends PagingAndSortingRepository<Funcio
     @Query(value="SELECT * FROM funcionario f WHERE f.data_contratacao >= :data",
             nativeQuery = true)
     List<Funcionario> findDataContratacaoMaior(LocalDate data);
+
+    @Query(value = "SELECT f.id, f.nome, f.salario FROM funcionario f", nativeQuery = true)
+    List<FuncionarioProjecao> findFuncionarioSalario();
 }

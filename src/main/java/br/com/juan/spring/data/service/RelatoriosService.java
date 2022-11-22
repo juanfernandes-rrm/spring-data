@@ -1,6 +1,7 @@
 package br.com.juan.spring.data.service;
 
 import br.com.juan.spring.data.orm.Funcionario;
+import br.com.juan.spring.data.orm.FuncionarioProjecao;
 import br.com.juan.spring.data.repository.FuncionarioRepository;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,7 @@ public class RelatoriosService {
             System.out.println("1 - busca funcionário nome");
             System.out.println("2 - busca funcionário nome, salario maior, data contratacao");
             System.out.println("3 - busca funcionário data contratacao");
+            System.out.println("4 - pesquisa funcionário salário");
             int acao = scanner.nextInt();
             switch (acao){
                 case 1:
@@ -36,6 +38,9 @@ public class RelatoriosService {
                     break;
                 case 3:
                     buscaFuncionarioDataContratacao(scanner);
+                    break;
+                case 4:
+                    pesquisaFuncionarioSalario();
                     break;
                 default:
                     system = false;
@@ -69,5 +74,10 @@ public class RelatoriosService {
         LocalDate localDate = LocalDate.parse(data, dateTimeFormatter);
         List<Funcionario> funcionarios = funcionarioRepository.findDataContratacaoMaior(localDate);
         funcionarios.forEach(System.out::println);
+    }
+
+    private void pesquisaFuncionarioSalario(){
+        List<FuncionarioProjecao> list = funcionarioRepository.findFuncionarioSalario();
+        list.forEach(f -> System.out.println("Funcionário ID: "+f.getId()+" | nome: "+f.getNome()+" | salário: "+f.getSalario()));
     }
 }
