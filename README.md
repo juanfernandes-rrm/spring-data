@@ -1,6 +1,6 @@
 ﻿# Spring Data
  
- Neste curso, busco uma introdução ao ecossitema Spring, prestando muita atenção em conceitos importantes do funcionanmento do Spring. 
+ Neste curso, busco uma introdução ao ecossitema Spring, prestando muita atenção em conceitos importantes do funcionamento do Spring. 
  Além disso, me aprofundo nos estudos de persistência de dados com Java, dando continuidade aos estudos de JDBC e JPA.
  
  ## Anotações
